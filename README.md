@@ -6,4 +6,4 @@ For this project, I used [Xpdf](http://www.foolabs.com/xpdf/) to preserve the do
 
 
 As of 05.18, contents include:
-(1) *pdftocsv.py*: script that structures grants data into readable spreadsheets, ready for analysis.
+(1) **pdftocsv.py**: script that parses grants data into readable csv files, ready for analysis.
