@@ -6,7 +6,11 @@ For this project, I used [Xpdf](http://www.foolabs.com/xpdf/) to preserve the do
 
 Next, I used the read_csvs.py script to combine all of the csvs into one csv file--merged.csv--for import into our MySQL database. But because my script didn't capture every irregularity, I went through and manually cleaned the data as well. Modifications are in merged_work.csv in the university_match directory.
 
-From here, my steps are slightly illogical. I should have first used the Python module SequenceMatcher to match universities with their respective IPEDS unit ids. Instead, I used lists of private, public, ivy and for-profit institutions for matching and later ran another script--match_ipeds.py--to assign universities their respective IPEDS unit ids so I could perform more nuanced analyses--i.e. how many grants went to elite private institutions.
+##With no unique id, use SequenceMatcher to join datasets
+
+Once the Mellon grants data was broken free from its PDF format, it was time to analyze what types of universities were grant recipients. Only one problem--no unique id for institutions. Which means I needed to perform matches based on an institution's name in order to determine if it was a private, public or ivy league university.
+
+I should have first used the Python module SequenceMatcher to match universities with their respective IPEDS unit ids. Instead, I used lists of private, public, ivy and for-profit institutions for matching and later ran another script--match_ipeds.py--to assign universities their respective IPEDS unit ids so I could perform more nuanced analyses--i.e. how many grants went to elite private institutions.
 
 With match.py, I generated a unique list of institutions and using a similiarity index of 0.8 as a threshold, I devised a program that using named based associations let me assign university types to my master list of institutions. This generated two types of output--matches.csv in the matches folder and unmatched.csv in the unmatched folder. 
 
@@ -18,9 +22,14 @@ From there, I appended the university type of matches.csv and unmatched_schools_
 
 Contents include:
 
-(1) **[pdftocsv.py](PUT LINK HERE): script that parses grants data into readable csv files, ready for analysis.
-(2) **[read_csvs.py](PUT LINK HERE): script that combines multiple csvs into one csv file.
-(3) **[match.py](PUT LINK HERE): script that generates a unique list of institutions and matches universities to university type using a name based association.
-(4) **[unmatched_uni.py](PUT LINK HERE): script that pulled universities from the unmatched.csv that were not assigned a university type in match.py.
-(5) **[append_matches.py](PUT LINK HERE): script that appended university type of matches.csv and unmatched_schools_matched.csv to a new master file-- new_merged_file.csv.
+(1) **[pdftocsv.py](https://github.com/sfrostenson/mellon-grants/blob/master/txt_files/pdftocsv.py): script that parses grants data into readable csv files, ready for analysis.
+
+(2) **[read_csvs.py](https://github.com/sfrostenson/mellon-grants/blob/master/output/read_csvs.py): script that combines multiple csvs into one csv file.
+
+(3) **[match.py](https://github.com/sfrostenson/mellon-grants/blob/master/university_match/match.py): script that generates a unique list of institutions and matches universities to university type using a name based association.
+
+(4) **[unmatched_uni.py](https://github.com/sfrostenson/mellon-grants/blob/master/university_match/unmatched/unmatched_uni.py): script that pulled universities from the unmatched.csv that were not assigned a university type in match.py.
+
+(5) **[append_matches.py](https://github.com/sfrostenson/mellon-grants/blob/master/university_match/matches/append_matches.py): script that appended university type of matches.csv and unmatched_schools_matched.csv to a new master file-- new_merged_file.csv.
+
 (6) **[match_ipeds.py](PUT LINK HERE): needs to be updated.
