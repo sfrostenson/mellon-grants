@@ -20,9 +20,9 @@ For this project, I used [Xpdf](http://www.foolabs.com/xpdf/) to preserve the do
 
 ##With no unique id, use SequenceMatcher to join datasets
 
-Once the Mellon grants data was broken free from its PDF format, it was time to analyze what types of universities were grant recipients. Only one problem--no unique id for institutions. Which means I needed to perform matches based on an institution's name in order to determine if it was a private, public or ivy league university.
+Once the Mellon grants data was broken free from its PDF format, it was time to analyze what types of universities were grant recipients. Only one problem--no unique id for institutions--which means I needed to perform matches based on an institution's name in order to determine if it was a private, public or ivy league university. Luckily, there was Python's excellent [SequenceMatcher](https://docs.python.org/2/library/difflib.html) to help.
 
-I should have first used the Python module SequenceMatcher to match universities with their respective IPEDS unit ids. Instead, I used lists of private, public, ivy and for-profit institutions for matching and later ran another script--match_ipeds.py--to assign universities their respective IPEDS unit ids so I could perform more nuanced analyses--i.e. how many grants went to elite private institutions.
+I should have first used SequenceMatcher to match universities with their respective IPEDS unit ids. Instead, I used lists of private, public, ivy and for-profit institutions for matching and later ran another script--match_ipeds.py--to assign universities their respective IPEDS unit ids so I could perform more nuanced analyses--i.e. how many grants went to elite private institutions.
 
 With match.py, I generated a unique list of institutions and using a similiarity index of 0.8 as a threshold, I devised a program that using named based associations let me assign university types to my master list of institutions. This generated two types of output--matches.csv in the matches folder and unmatched.csv in the unmatched folder. 
 
