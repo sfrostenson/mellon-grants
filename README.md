@@ -6,17 +6,17 @@ For this project, I used [Xpdf](http://www.foolabs.com/xpdf/) to preserve the do
 
 ##Contents include:
 
-(1) **[pdftocsv.py](https://github.com/sfrostenson/mellon-grants/blob/master/txt_files/pdftocsv.py): script that parses grants data into readable csv files, ready for analysis.
+(1) **[pdftocsv.py](https://github.com/sfrostenson/mellon-grants/blob/master/txt_files/pdftocsv.py)**: script that parses grants data into readable csv files, ready for analysis.
 
-(2) **[read_csvs.py](https://github.com/sfrostenson/mellon-grants/blob/master/output/read_csvs.py): script that combines multiple csvs into one csv file.
+(2) **[read_csvs.py](https://github.com/sfrostenson/mellon-grants/blob/master/output/read_csvs.py)**: script that combines multiple csvs into one csv file.
 
-(3) **[match.py](https://github.com/sfrostenson/mellon-grants/blob/master/university_match/match.py): script that generates a unique list of institutions and matches universities to university type using a name based association.
+(3) **[match.py](https://github.com/sfrostenson/mellon-grants/blob/master/university_match/match.py)**: script that generates a unique list of institutions and matches universities to university type using a name based association.
 
-(4) **[unmatched_uni.py](https://github.com/sfrostenson/mellon-grants/blob/master/university_match/unmatched/unmatched_uni.py): script that pulled universities from the unmatched.csv that were not assigned a university type in match.py.
+(4) **[unmatched_uni.py](https://github.com/sfrostenson/mellon-grants/blob/master/university_match/unmatched/unmatched_uni.py)**: script that pulled universities from the unmatched.csv that were not assigned a university type in match.py.
 
-(5) **[append_matches.py](https://github.com/sfrostenson/mellon-grants/blob/master/university_match/matches/append_matches.py): script that appended university type of matches.csv and unmatched_schools_matched.csv to a new master file-- new_merged_file.csv.
+(5) **[append_matches.py](https://github.com/sfrostenson/mellon-grants/blob/master/university_match/matches/append_matches.py)**: script that appended university type of matches.csv and unmatched_schools_matched.csv to a new master file-- new_merged_file.csv.
 
-(6) **[match_ipeds.py](PUT LINK HERE): needs to be updated.
+(6) **[match_ipeds.py](PUT LINK HERE)**: needs to be updated.
 
 ##With no unique id, use SequenceMatcher to join datasets
 
